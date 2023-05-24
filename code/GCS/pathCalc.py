@@ -61,53 +61,17 @@ def actionCalc(action, direction, path_length,):
     print(action)
 
 #모빌리티가 사용할 행동
-def mobilActionCalc(mAction, direction, path_length,):
-    mAction.append('GO')
-    
-    for i in range(path_length - 2):
-        a = direction[i]
-        b = direction[i+1]
+def mobilActionCalc(mAction, action):
+    for i in range(len(action)):
+        if(action[i] == 'TL'):
+            mAction.append('TL')
+            mAction.append('GO')
+        elif(action[i] == 'TR'):
+            mAction.append('TR')
+            mAction.append('GO')
+        elif(action[i] == 'ER'):
+            mAction.append('ER')
+        elif(action[i] == 'GO'):
+            mAction.append('GO')
 
-        mAction.append('GO')
-        if (a == 'D'):
-            if(b == 'D'):
-                mAction.append('GO')
-            elif(b == 'R'):
-                mAction.append('TL')
-            elif(b == 'L'):
-                mAction.append('TR')
-            else:
-                mAction.append("ER")
-
-        elif (a == 'U'):
-            if(b == 'U'):
-                mAction.append('GO')
-            elif(b == 'L'):
-                mAction.append('TL')
-            elif(b == 'R'):
-                mAction.append('TR')
-            else:
-                mAction.append("ER")
-
-        elif (a == 'R'):
-            if(b == 'R'):
-                mAction.append('GO')
-            elif(b == 'U'):
-                mAction.append('TL')
-            elif(b == 'D'):
-                mAction.append('TR')
-            else:
-                mAction.append("ER")
-
-        elif (a == 'L'):
-            if(b == 'L'):
-                mAction.append('GO')
-            elif(b == 'D'):
-                mAction.append('TL')
-            elif(b == 'U'):
-                mAction.append('TR')
-            else:
-                mAction.append("ER")
-
-    mAction.append('GO')
     print(mAction)

@@ -41,5 +41,5 @@ pathValue = [path[i + 1] - path[i] for i in range(path_length - 1)]
 
 pathCalc.directionCalc(pathValue, direction)
 pathCalc.actionCalc(action, direction, path_length)
-pathCalc.mobilActionCalc(mAction, direction, path_length)
+pathCalc.mobilActionCalc(mAction, action)
 weightCalc.weightCalc(node, action, path)
